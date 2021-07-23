@@ -29,6 +29,11 @@ def evaluate():
         equation.set("Syntax Error")
         expression = ""
 
+def clear():
+    global expression
+    expression = ""
+    equation.set("")
+
 # Driver Code
 if __name__ == '__main__':
     # varibales for color values
@@ -116,10 +121,10 @@ if __name__ == '__main__':
     command=lambda: keyPress('/'),height=3,width=7)
     divide.grid(row=5,column=3,pady=5)
 
-    clear = Button(root, text='AC',fg=fgcolor,bg='red',height=3,width=7)
+    clear = Button(root, text='AC',fg=fgcolor,command=clear,bg='red',height=3,width=7)
     clear.grid(row=6,column=3)
 
-    exit = Button(root, text='Exit',fg=fgcolor,bg='red',height=3,width=7)
+    exit = Button(root, text='Exit',fg=fgcolor,bg='red',command=root.destroy,height=3,width=7)
     exit.grid(row=6,column=2)
 
     equals = Button(root, text='=',fg=fgcolor,bg=bgcolor2,command=evaluate,height=3,width=7)
