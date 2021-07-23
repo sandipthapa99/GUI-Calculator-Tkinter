@@ -15,6 +15,20 @@ def keyPress(num):
     # update the expression to evaluate
     equation.set(expression)
 
+# Function to evaluate final expression
+def evaluate():
+    try:
+        global expression
+        result = str(eval(expression))
+        equation.set(result)
+        expression = ""
+    except(ZeroDivisionError):
+        equation.set("Math Error")
+        expression = ""
+    except:
+        equation.set("Syntax Error")
+        expression = ""
+
 # Driver Code
 if __name__ == '__main__':
     # varibales for color values
@@ -108,7 +122,7 @@ if __name__ == '__main__':
     exit = Button(root, text='Exit',fg=fgcolor,bg='red',height=3,width=7)
     exit.grid(row=6,column=2)
 
-    equals = Button(root, text='=',fg=fgcolor,bg=bgcolor2,height=3,width=7)
+    equals = Button(root, text='=',fg=fgcolor,bg=bgcolor2,command=evaluate,height=3,width=7)
     equals.grid(row=5,column=2,pady=5)
 
     # start the program
