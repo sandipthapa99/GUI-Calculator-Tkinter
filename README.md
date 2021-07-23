@@ -1,1 +1,1 @@
-# GUI-Calculator-Tkinter
+# GUI Calculator built using Python Tkinter
