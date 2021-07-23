@@ -1,8 +1,19 @@
 # Import Tkinter
 from tkinter import *
 
+# Global variable to store expression to calculate
+expression = ""
+
+# Function to update expression
 def keyPress(num):
-    pass
+    # pointing to the global expression variable
+    global expression
+
+    # adding new item to the expression
+    expression = expression + str(num)
+
+    # update the expression to evaluate
+    equation.set(expression)
 
 # Driver Code
 if __name__ == '__main__':
